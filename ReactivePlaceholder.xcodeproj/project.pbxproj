@@ -12,6 +12,9 @@
 		528E8AF71EF0D98E00E29470 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 528E8AF51EF0D98E00E29470 /* Main.storyboard */; };
 		528E8AF91EF0D98E00E29470 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 528E8AF81EF0D98E00E29470 /* Assets.xcassets */; };
 		528E8AFC1EF0D98E00E29470 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 528E8AFA1EF0D98E00E29470 /* LaunchScreen.storyboard */; };
+		528E8B061EF17A2500E29470 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 528E8B031EF17A2500E29470 /* ReactiveCocoa.framework */; };
+		528E8B071EF17A2500E29470 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 528E8B041EF17A2500E29470 /* ReactiveSwift.framework */; };
+		528E8B081EF17A2500E29470 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 528E8B051EF17A2500E29470 /* Result.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		528E8AF81EF0D98E00E29470 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		528E8AFB1EF0D98E00E29470 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		528E8AFD1EF0D98E00E29470 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		528E8B031EF17A2500E29470 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = ../Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
+		528E8B041EF17A2500E29470 /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = ../Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
+		528E8B051EF17A2500E29470 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = ../Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +35,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				528E8B081EF17A2500E29470 /* Result.framework in Frameworks */,
+				528E8B061EF17A2500E29470 /* ReactiveCocoa.framework in Frameworks */,
+				528E8B071EF17A2500E29470 /* ReactiveSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +47,9 @@
 		528E8AE51EF0D98D00E29470 = {
 			isa = PBXGroup;
 			children = (
+				528E8B031EF17A2500E29470 /* ReactiveCocoa.framework */,
+				528E8B041EF17A2500E29470 /* ReactiveSwift.framework */,
+				528E8B051EF17A2500E29470 /* Result.framework */,
 				528E8AF01EF0D98E00E29470 /* ReactivePlaceholder */,
 				528E8AEF1EF0D98E00E29470 /* Products */,
 			);
@@ -74,6 +86,7 @@
 				528E8AEA1EF0D98E00E29470 /* Sources */,
 				528E8AEB1EF0D98E00E29470 /* Frameworks */,
 				528E8AEC1EF0D98E00E29470 /* Resources */,
+				528E8B091EF17A5700E29470 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -131,6 +144,25 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		528E8B091EF17A5700E29470 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveSwift.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		528E8AEA1EF0D98E00E29470 /* Sources */ = {
